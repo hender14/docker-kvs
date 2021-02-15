@@ -6,8 +6,8 @@ pipeline {
     PROD_HOST = "root@192.168.128.171"
     BUILD_TIMESTAMP = sh(script: "date +%Y%m%d-%H%M%S", returnStdout: true).trim()
   }
-/*  stages {
-    stage('Pre Check') {
+  stages {
+/*    stage('Pre Check') {
       steps {
         sh "test -f ~/.docker/config.json"
         sh "cat ~/.docker/config.json | grep docker.io"
