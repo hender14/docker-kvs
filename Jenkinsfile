@@ -7,13 +7,13 @@ pipeline {
     BUILD_TIMESTAMP = sh(script: "date +%Y%m%d-%H%M%S", returnStdout: true).trim()
   }
   stages {
-/*    stage('Pre Check') {
+    stage('Pre Check') {
       steps {
         sh "test -f ~/.docker/config.json"
         sh "cat ~/.docker/config.json | grep docker.io"
       }
     }
-*/    stage('Build') {
+    stage('Build') {
       steps {
         sh "cat docker-compose.build.yml"
         sh "docker-compose -H ssh://${BUILD_HOST} -f docker-compose.build.yml down"
